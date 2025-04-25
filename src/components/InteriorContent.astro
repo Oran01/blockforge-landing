@@ -1,0 +1,23 @@
+---
+/**
+ * InteriorContent.astro
+ *
+ * A layout wrapper component that provides consistent padding, background blur, and styling
+ * for inner content sections of the app. It uses a `<slot />` to render children.
+ *
+ * @component
+ * @example
+ * <InteriorContent>
+ *   <h2>Secure by Design</h2>
+ *   <p>We ensure end-to-end encryption...</p>
+ * </InteriorContent>
+ */
+---
+
+<!-- Section with blurred dark background and vertical padding -->
+<section class="py-32 bg-zinc-900/30 backdrop-blur-sm">
+    <div class="container">
+        <!-- Slot to inject child content dynamically -->
+        <slot />
+    </div>
+</section>

@@ -1,0 +1,51 @@
+---
+/**
+ * contact.astro
+ *
+ * Contact page with a hero section, a short description, and a contact form.
+ * The form includes name, email, and message fields, all styled with custom input components.
+ * The layout ensures consistency with the rest of the site using shared components.
+ */
+
+import DefaultLayout from "../layouts/Default.astro";
+import InteriorHero from "../components/InteriorHero.astro";
+import InteriorContent from "../components/InteriorContent.astro";
+import { CutCornerButton } from "../components/CutCornerButton";
+import Input from "../components/Input.astro";
+import Textarea from "../components/Textarea.astro";
+
+---
+
+<DefaultLayout>
+    <!-- Header section with animated background and intro text -->
+    <InteriorHero>
+        <p class="uppercase font-extrabold text-center text-zinc-500 tracking-wider">Let's Talk</p>
+        <h1 class="font-heading font-black text-5xl md:text-6xl lg:text-7xl text-center mt-4">Contact Us</h1>
+        <p class="text-center text-xl md:text-2xl mt-6 max-w-xl mx-auto text-zinc-400">We're here to help and answer any questions you may have. Reach out to us to learn more about out services, get support, or apply dor positions.</p>
+    </InteriorHero>
+
+    <!-- Main content section with contact form -->
+    <InteriorContent>
+        <div class="max-w-full mx-auto">
+            <h2 class="font-heading font-black text-3xl">What can we help you with?</h2>
+
+             <!-- Contact form -->
+            <form class="flex flex-col mt-8">
+                 <!-- Name field -->
+                <label for="name">Name</label>
+                <Input type="text" name="name" id="id" class="mt-1"/>
+
+                 <!-- Email field -->
+                <label class="mt-4" for="email">Email</label>
+                <Input type="email" name="email" id="email" class="mt-1"/>
+
+                <!-- Message textarea -->
+                <label class="mt-4" for="message">Message</label>
+                <Textarea name="message" id="message" class="mt-1"/>
+
+                <!-- Submit button -->
+                <CutCornerButton className="mt-4">Send Message</CutCornerButton>
+            </form>
+        </div>
+    </InteriorContent>
+</DefaultLayout>

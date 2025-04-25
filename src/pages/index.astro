@@ -1,0 +1,47 @@
+---
+/**
+ * index.astro
+ *
+ * Home page of the SaaS Blockchain site.
+ * Renders key marketing sections and fetches the 4 most recent blog posts from the `blog` content collection.
+ */
+
+import DefaultLayout from "../layouts/Default.astro";
+
+// Main landing hero section with headline and CTA
+import { HeroSection } from "../sections/Hero"
+
+// Feature overview cards (visual summary of benefits)
+import { FeaturesCardsSection } from "../sections/FeatureCards"
+
+// Grid-based feature breakdown section
+import { FeaturesGrid } from "../sections/FeaturesGrid"
+
+// Latest blog posts preview section
+import { LatestPosts } from "../sections/LatestPosts"
+
+import { getCollection } from "astro:content"
+
+// Fetch all blog posts
+const posts = await getCollection("blog")
+
+// Sort posts by newest first (descending by pubDate) and take top 4
+const lattesPost = posts.sort((a, b) => {
+  if(a.data.pubDate.valueOf() == b.data.pubDate.valueOf()) return 0;
+   return a.data.pubDate.valueOf() > b.data.pubDate.valueOf() ? -1 : 1;
+}).slice(0,4);
+---
+
+<DefaultLayout>
+  <!-- Landing hero section with heading, description and CTA -->
+  <HeroSection client:load />
+
+  <!-- Visual feature card overview -->
+  <FeaturesCardsSection client:load />
+
+  <!-- Detailed feature breakdown with grid layout -->
+  <FeaturesGrid client:load />
+
+  <!-- Blog preview of the latest 4 posts -->
+  <LatestPosts lattesPost={lattesPost} client:load/>
+</DefaultLayout>

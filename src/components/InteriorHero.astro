@@ -1,0 +1,36 @@
+---
+/**
+ * InteriorHero.astro
+ *
+ * A decorative hero section layout with two animated hexagons rendered behind the main content.
+ * Used to create a visually striking intro for interior pages. The layout centers the content
+ * and overlays animated SVG elements using absolute positioning.
+ *
+ * @component
+ * @example
+ * <InteriorHero>
+ *   <h1>Our Blockchain Infrastructure</h1>
+ * </InteriorHero>
+ */
+
+ import { Hexagon } from "./Hexagon";
+---
+
+<!-- Full-height hero section with overflow hidden for animation containment -->
+<section class="py-60 relative overflow-x-clip">
+
+    <!-- Centered animated background hexagon (small, front layer) -->
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Hexagon size={800} client:load duration={30}/>
+    </div>
+
+    <!-- Centered animated background hexagon (large, reverse direction, back layer) -->
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <Hexagon size={1200} client:load duration={50} reverse/>
+    </div>
+
+     <!-- Main content container centered in layout -->
+    <div class="container">
+        <slot />
+    </div>
+</section>

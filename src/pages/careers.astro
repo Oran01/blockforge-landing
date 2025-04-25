@@ -1,0 +1,65 @@
+---
+/**
+ * careers.astro
+ *
+ * Careers listing page that fetches available positions from the `positions` content collection
+ * and displays them as animated cards. Each job includes a category, type, remote tag, and CTA.
+ *
+ * Layout includes:
+ * - Animated hero section (InteriorHero)
+ * - Content section listing available roles (InteriorContent)
+ */
+
+import DefaultLayout from "../layouts/Default.astro";
+import InteriorHero from "../components/InteriorHero.astro";
+import InteriorContent from "../components/InteriorContent.astro";
+import { getCollection } from "astro:content";
+import { Card } from "../components/Card";
+import { Tag } from "../components/Tag";
+import { getColorFromPositionCategory, getColorFromPositionType } from "../utils/postUtils";
+import { motion } from "framer-motion";
+
+// Fetch all markdown entries from the 'positions' collection
+const positions = await getCollection("positions")
+
+---
+
+<DefaultLayout>
+    <!-- Hero header with animated hexagon background -->
+    <InteriorHero>
+        <p class="uppercase font-extrabold text-center text-zinc-500 tracking-wider">Join the team</p>
+        <h1 class="font-heading font-black text-5xl md:text-6xl lg:text-7xl text-center mt-4">We are hiring</h1>
+        <p class="text-center text-xl md:text-2xl mt-6 max-w-xl mx-auto text-zinc-400">WE are always looking for talented individuals passionate about building blockchain products that make a difference.</p>
+    </InteriorHero>
+
+     <!-- Careers card grid -->
+    <InteriorContent>
+        <div class="flex flex-col gap-12">
+            {positions.map(({data: {title, type, description, category, remote}}) => (
+                <motion.a 
+                client:load
+                initial={{opacity: 0, y: 20}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true, amount: 0.5}}
+                transition={{duration: 0.5, ease: "easeIn"}}
+                href="/contact">
+                    <Card color={getColorFromPositionCategory(category)} buttonText="Apply Now">
+                         {/* Tag indicators for remote and type */}
+                         <div class="flex items-center gap-3">
+                            {remote && (
+                              <Tag>Remote</Tag>
+                             )}
+                            <Tag color={getColorFromPositionType(type)}>{type}</Tag>
+                        </div>
+
+                         {/* Role title */}
+                         <h2 class="text-3xl font-black font-heading mt-6">{title}</h2>
+
+                         {/* Short role description */}
+                        <p class="text-xl text-zinc-400 mt-4">{description}</p>
+                    </Card>
+                </motion.a>
+            ))}
+        </div>
+    </InteriorContent>
+</DefaultLayout>

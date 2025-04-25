@@ -1,0 +1,99 @@
+# ============================
+# General
+# ============================
+
+# Node dependencies
+node_modules/
+
+# Output folders
+dist/
+build/
+.astro/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variable files
+.env
+.env.*.local
+.env.local
+.env.production
+.env.development
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+Icon?
+
+# ============================
+# Editors & IDEs
+# ============================
+
+# VS Code
+.vscode/
+
+# JetBrains (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+
+# Vim
+*.swp
+*.swo
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ============================
+# TypeScript / Build Tools
+# ============================
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional eslint / stylelint / lint-staged logs
+.eslintcache
+.stylelintcache
+
+# Astro preview/dev cache
+.cache/
+
+# Next.js-style cache (if added later)
+.next/
+
+# Storybook (optional)
+.storybook-out/
+
+# SvelteKit (if used)
+.svelte-kit/
+
+# ============================
+# Testing
+# ============================
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# Playwright
+playwright-report/
+test-results/
+
+# ============================
+# Misc
+# ============================
+
+# Mac and Linux Trash
+.Trashes
+*.Trash-*
+
+# Local npm registry (e.g., Verdaccio)
+storage/
+
+# Optional lock files (use depending on your team)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml

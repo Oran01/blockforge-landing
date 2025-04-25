@@ -1,0 +1,57 @@
+---
+/**
+ * Default.astro
+ *
+ * The main layout used across most pages in the SaaS Blockchain site.
+ * It includes global styles, shared sections (header, footer, etc.), and a slot for dynamic content.
+ *
+ * This layout wraps pages with a consistent structure:
+ * - Header
+ * - Main content (via <slot />)
+ * - Testimonials
+ * - Call to Action
+ * - Footer
+ */
+
+import { CallToAction } from "../sections/CallToAction";
+import { Footer } from "../sections/Footer";
+import { HeaderSection } from "../sections/Header";
+import { TestimonialSection } from "../sections/Testimonials";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Basic metadata and responsive config -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO-friendly title -->
+    <title>Blockchain Blog - Frontend Tribe</title>
+
+    <!-- Fonts and preconnect optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sticky header section (hydrated on client load for interactions like mobile nav) -->
+    <HeaderSection client:load/>
+
+    <!-- Main content injected from each individual page -->
+    <slot />
+
+     <!-- Testimonials section (hydrated on client load for animations or client-only effects) -->
+    <TestimonialSection client:load />
+
+    <!-- CTA section encouraging user engagement -->
+    <CallToAction client:load />
+
+     <!-- Global site footer -->
+    <Footer />
+  </body>
+</html>
