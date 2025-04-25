@@ -30,6 +30,12 @@ Inspired by [Frontend Tribe’s YouTube](https://www.youtube.com/@frontend-tribe
 
 ---
 
+## 📸 Demo
+
+![Blockforge Demo](public/assets/images/demo-screenshot.png)
+
+---
+
 ### 🔍 Highlights
 
 - ✅ Fully responsive design with animated mobile navigation
