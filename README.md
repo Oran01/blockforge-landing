@@ -117,4 +117,4 @@ Feel free to fork this repository and submit pull requests to improve the projec
 
 ---
 
-🌟 Star this repo if you found it useful! ⭐
+⭐ If you enjoyed this project, please consider giving it a star ⭐
