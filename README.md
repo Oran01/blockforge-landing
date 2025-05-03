@@ -16,6 +16,7 @@ Elegant, animated, and developer-friendly landing page for a modern blockchain s
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-EF476F?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
 </div>
 
@@ -33,6 +34,12 @@ Inspired by [Frontend Tribe’s YouTube](https://www.youtube.com/@frontend-tribe
 ## 📸 Demo
 
 ![Blockforge Demo](public/assets/images/demo-screenshot.png)
+
+---
+
+## 🌐 Live Demo
+
+[![Live Demo](https://img.shields.io/badge/Visit_Live_Demo-0A66C2?style=for-the-badge&logo=vercel&logoColor=white)](https://blockforge-landing.vercel.app/)
 
 ---
 
@@ -115,6 +122,4 @@ This project was built following this excellent walkthrough on YouTube:
 
 Feel free to fork this repository and submit pull requests to improve the project!
 
----
-
-⭐ If you enjoyed this project, please consider giving it a star ⭐
+⭐ If you enjoyed this project, please consider giving it a star!
